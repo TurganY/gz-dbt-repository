@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('gz_raw_data', 'raw_gz_ship') }}
+    select * from {{ source('raw', 'ship') }}
 
 ),
 
@@ -16,7 +16,6 @@ renamed as (
         ship_cost
 
     from source
-    where shipping_fee <> shipping_fee_1
 
 )
 
